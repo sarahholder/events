@@ -21,7 +21,7 @@ const pies = [
     isAvailable: false,
     imageURL: "https://www.spendwithpennies.com/wp-content/uploads/2018/09/SpendWithPennies-Apple-Pie-Recipe-31.jpg",
     drinkPairing: "wine",
-    instructor: "Mary"
+    instructor: "Zoe"
 },
 {
     name: "Pizza",
@@ -92,20 +92,20 @@ const printToDom = (divId, textToPrint) => {
 
 console.log('pies', pies);
 
-const pieBuilder = () => {
+const pieBuilder = (monkeybuttArray) => {
      let domString = '';
-     for(let i = 0; i < pies.length; i++)
+     for(let i = 0; i < monkeybuttArray.length; i++)
      {
-         domString += `<div class = 'card'><h3 class= "header"> ${pies[i].name}</h3>`;
-         domString += `<img src= "${pies[i].imageURL}" alt= "A picture of ${pies[i].name}"></<img>`;
-         domString += `<p> Price: $${pies[i].price}</p>`;
-         domString += `<p> Warm Pie: ${pies[i].isWarm}</p>`;
-         domString += `<p> Organic: ${pies[i].isOrganic}</p>`;
-         domString += `<p> Crust: ${pies[i].crust}</p>`;
-         domString += `<p> Ice Cream: ${pies[i].iceCream}</p>`;
-         domString += `<p> Available: ${pies[i].isAvailable}</p>`;
-         domString += `<p> Pairing Drink: ${pies[i].drinkPairing}</p>`;
-         domString += `<p> Instructor: ${pies[i].instructor}</p>`;     
+         domString += `<div class = 'card'><h3 class= "header"> ${monkeybuttArray[i].name}</h3>`;
+         domString += `<img src= "${monkeybuttArray[i].imageURL}" alt= "A picture of ${pies[i].name}"></<img>`;
+         domString += `<p> Price: $${monkeybuttArray[i].price}</p>`;
+         domString += `<p> Warm Pie: ${monkeybuttArray[i].isWarm}</p>`;
+         domString += `<p> Organic: ${monkeybuttArray[i].isOrganic}</p>`;
+         domString += `<p> Crust: ${monkeybuttArray[i].crust}</p>`;
+         domString += `<p> Ice Cream: ${monkeybuttArray[i].iceCream}</p>`;
+         domString += `<p> Available: ${monkeybuttArray[i].isAvailable}</p>`;
+         domString += `<p> Pairing Drink: ${monkeybuttArray[i].drinkPairing}</p>`;
+         domString += `<p> Instructor: ${monkeybuttArray[i].instructor}</p>`;     
          domString += `</div>`;
      }
      printToDom('pieFlavors', domString);
@@ -113,6 +113,21 @@ const pieBuilder = () => {
     };
 
 
+const findMyPies = (e) =>{
+    const buttonId = e.target.id;
+    const myPies = [];
+    for(let i = 0; i < pies.length; i++){
+        if(pies[i].instructor === buttonId){
+        myPies.push(pies[i]);
+    }
+    pieBuilder(myPies);
+}
+};
 
-pieBuilder();
+pieBuilder(pies);
+
+document.getElementById('Zoe').addEventListener('click', findMyPies);
+document.getElementById('Mary').addEventListener('click', findMyPies);
+document.getElementById('Luke').addEventListener('click', findMyPies);
+document.getElementById('Sarah').addEventListener('click', findMyPies);
 
