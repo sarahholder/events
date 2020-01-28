@@ -1,3 +1,48 @@
 body{
-    background-color: aquamarine;
+
+    font-family: Helvetica, sans-serif;
+    font-size: larger;
+    background: blanchedalmond;
+    margin: 0px;
+    padding: 0;
+}
+
+.header{
+align-content: center;
+text-align: center;
+width: 100%;
+text-shadow: 100em;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+align-content: center;
+}
+
+#pieFlavors{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+height: auto;
+}
+
+.card{
+    border: olivedrab;
+    border-style: dotted;
+    border-radius: 10px;
+    border-width: 2px;
+    background-color: lightblue;
+    width: 30%;
+    margin: 1%;
+    justify-content: center;
+
+}
+
+p{
+    text-emphasis: none;
+    text-align: center;
+    
+}
+
+img{
+width: 100%;
 }
