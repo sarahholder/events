@@ -115,12 +115,16 @@ const pieBuilder = (monkeybuttArray) => {
 
 const findMyPies = (e) =>{
     const buttonId = e.target.id;
+    if(buttonId === 'All'){
+        pieBuilder(pies);
+    }else{
     const myPies = [];
     for(let i = 0; i < pies.length; i++){
         if(pies[i].instructor === buttonId){
         myPies.push(pies[i]);
     }
     pieBuilder(myPies);
+}
 }
 };
 
@@ -130,4 +134,4 @@ document.getElementById('Zoe').addEventListener('click', findMyPies);
 document.getElementById('Mary').addEventListener('click', findMyPies);
 document.getElementById('Luke').addEventListener('click', findMyPies);
 document.getElementById('Sarah').addEventListener('click', findMyPies);
-
+document.getElementById('All').addEventListener('click', findMyPies);
